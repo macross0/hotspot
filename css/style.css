@@ -11,7 +11,9 @@ span {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: sans-serif, Arial
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: medium !important;
+	font-weight: 500;
 }
 
 body,
@@ -198,6 +200,9 @@ input[type=text]:focus {
 }
 
 #connect > input {
+	font-size: 1.2em !important;
+	font-weight: 700;
+	letter-spacing: 0px !important;
 	cursor: pointer;
 	text-align: center;
 	width: 100%;
