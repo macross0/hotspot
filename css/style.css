@@ -71,7 +71,7 @@ p::first-letter {
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin-top: 13px;
+	margin-top: 14px;
 	margin-left: 14px
 }
 
@@ -83,10 +83,6 @@ p::first-letter {
 
 .logo * {
 	fill: #fff
-}
-
-.lite .logo * {
-	fill: #444
 }
 
 h1 {
@@ -170,22 +166,27 @@ input:focus {
 
 input[type=password], input[type=text] {
 	width: 100%;
-	background-color: rgba(255, 255, 255, .8);
+	background-color: rgba(255, 255, 255, 1);
 	height: 44px;
 	padding: 3px 20px 3px 40px;
 	margin-bottom: 20px;
 	border-radius: 6px;
-	background-color: rgba(255, 255, 255, .8);
+	border: 2px white solid;
 	-webkit-transition: -webkit-box-shadow .3s ease-in-out;
 	transition: -webkit-box-shadow .3s ease-in-out;
 	transition: box-shadow .3s ease-in-out;
-	transition: box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out
+	transition: box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+	color: rgb(0, 126, 63);
+}
+
+input[type=password]::placeholder, input[type=text]::placeholder {
+	color: rgb(0, 126, 63);
 }
 
 input[type=password]:focus,
 input[type=text]:focus {
 	-webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
-	box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1)
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1)
 }
 
 .bt {
@@ -195,11 +196,11 @@ input[type=text]:focus {
 #connect {
 	width: 100%;
 	height: 44px;
-	border: 3px solid white;
+	border: 2px solid white;
 	border-radius: 6px;
 }
 
-#connect > input {
+#connect-button {
 	font-size: 1.2em !important;
 	font-weight: 700;
 	letter-spacing: 0px !important;
@@ -210,13 +211,15 @@ input[type=text]:focus {
 	position: relative;
 	transition: 0.4s;
 	background: -webkit-linear-gradient(top, green 0%, green 50%, white 50%,white 100%);
+	background: linear-gradient(top, green 0%, green 50%, white 50%,white 100%);
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	background-position: 50% 100%;
 	background-size: 100% 200%;
 }
 
-#connect > div {
+#connect-background {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -256,53 +259,6 @@ table td {
 
 table td:first-child {
 	font-weight: 700
-}
-
-.lite {
-	background: #fff
-}
-
-.lite input[type=password],
-.lite input[type=text] {
-	border: 1px solid #c3c3c3
-}
-
-.lite .info,
-.lite h1,
-.lite table td {
-	color: #444
-}
-
-.lite input[type=password]:focus,
-.lite input[type=text]:focus {
-	-webkit-box-shadow: 0 0 5px 0 rgba(62, 77, 89, .2);
-	box-shadow: 0 0 5px 0 rgba(62, 77, 89, .2)
-}
-
-.dark {
-	background: #343434
-}
-
-.dark input[type=submit] {
-	background: #dc3a41
-}
-
-.dark input[type=submit]:focus,
-.dark input[type=submit]:hover {
-	background: #b92f35
-}
-
-.dark input[type=password],
-.dark input[type=text] {
-	background-color: #fff
-}
-
-.dark a {
-	color: #dc3a41
-}
-
-.dark table td {
-	border-bottom: 1px solid #505050
 }
 
 .info.alert {

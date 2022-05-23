@@ -44,7 +44,7 @@
                 <form fill-background name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
                     <input type="hidden" name="dst" value="$(link-orig)" />
                     <input type="hidden" name="popup" value="true" />
-                    <img src="img/GERBLNAU.png" class="logo">
+                    <img src="img/GERBLNAU1.svg" class="logo">
 
 
                     <p class="info $(if error)alert$(endif)">
@@ -54,12 +54,12 @@
                         $(if error)$(error)$(endif)
                     </p>
                     <label>
-                        <img class="ico" src="img/user.svg" alt="#" />
+                        <img class="ico" src="img/userGreen.svg" alt="#" />
                         <input name="username" type="text" value="$(username)" placeholder="Корпоративна адреса" />
                     </label>
 
                     <label>
-                        <img class="ico" src="img/password.svg" alt="#" />
+                        <img class="ico" src="img/passwordGreen.svg" alt="#" />
                         <input name="password" type="password" placeholder="Пароль" />
                     </label>
 
