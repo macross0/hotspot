@@ -12,13 +12,6 @@
 
 <body>
 
-    <!-- two other colors
-
-<body class="lite">
-<body class="dark">
-
--->
-
     $(if chap-id)
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
@@ -48,10 +41,9 @@
 
 
                     <p class="info $(if error)alert$(endif)">
-                        $(if error == "")Для підключення використовуйте свою корпоративну адресу та пароль до інтернету $(if trial == 'yes')<br />Доступний пробний період, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">натисніть тут</a>.$(endif)
-                        $(endif)
+                        <!-- $(if error == "")Для підключення використовуйте свою корпоративну адресу та пароль до інтернету$(endif)<br>
 
-                        $(if error)$(error)$(endif)
+                        $(if error)$(error)$(endif) -->
                     </p>
                     <label>
                         <img class="ico" src="img/userGreen.svg" alt="#" />
@@ -68,8 +60,9 @@
                         <div id="connect-background"></div>
                     </div>
                     
+                    <!-- $(if trial == 'yes')--><a id="guest-connect" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Під'єднатися як гість з обмеженими можливостями</a><!-- $(endif) -->
 
-                    <p name="kit-message">Відділ КІТ ЛНУП</p>
+                    <p class="connect-text bottom">Відділ КІТ ЛНУП</p>
 
                 </form>
             </div>

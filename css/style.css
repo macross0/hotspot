@@ -169,18 +169,32 @@ input[type=password], input[type=text] {
 	background-color: rgba(255, 255, 255, 1);
 	height: 44px;
 	padding: 3px 20px 3px 40px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 6px;
-	border: 2px white solid;
-	-webkit-transition: -webkit-box-shadow .3s ease-in-out;
-	transition: -webkit-box-shadow .3s ease-in-out;
-	transition: box-shadow .3s ease-in-out;
-	transition: box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+	-webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
 	color: rgb(0, 126, 63);
 }
 
-input[type=password]::placeholder, input[type=text]::placeholder {
+input[type=password]::placeholder,
+input[type=text]::placeholder,
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
 	color: rgb(0, 126, 63);
+	-webkit-text-fill-color: rgb(0, 126, 63);
+	-moz-text-fill-color: rgb(0, 126, 63);
+	-ms-text-fill-color: rgb(0, 126, 63);
+	-o-text-fill-color: rgb(0, 126, 63);
 }
 
 input[type=password]:focus,
@@ -198,10 +212,19 @@ input[type=text]:focus {
 	height: 44px;
 	border: 2px solid white;
 	border-radius: 6px;
+	-webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+	margin-bottom: 10px;
+}
+
+#connect:hover, #connect-button:focus {
+	-webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1)
 }
 
 #connect-button {
-	font-size: 1.2em !important;
 	font-weight: 700;
 	letter-spacing: 0px !important;
 	cursor: pointer;
@@ -241,9 +264,12 @@ input[type=text]:focus {
 #connect:hover #connect-button {
 	transition: 0.4s;
 	-webkit-background-clip: text;
+	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	background-position: 50% 0% !important;
 }
+
+
 
 table {
 	border-collapse: collapse;
@@ -293,8 +319,16 @@ table td:first-child {
 
 }
 
-p[name=kit-message] {
-	margin-top: 20px;
+#guest-connect {
+	margin-top: 10px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+.connect-text {
+	margin: 20px;
 	color: #fff;
 	text-align: center;
 }
