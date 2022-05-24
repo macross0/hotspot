@@ -278,6 +278,12 @@ input[type=text]:focus {
 	text-align: center;
 	display: block;
 	transition: 0.2s ease-in-out;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+    user-select: none;
 }
 
 #guest-connect:hover, #guest-connect:focus {
@@ -331,4 +337,49 @@ table td:first-child {
 
 form[name=login], form[name=logout] {
 	margin-bottom: 0 !important;
+}
+
+#lang-switcher {
+	width: 104px;
+	height: 34px;
+	border: 2px white solid;
+	border-radius: 6px;
+	right: 10%;
+	position: absolute;
+}
+
+#lang-switcher > div {
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: white;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+    user-select: none;
+}
+
+#lang-switcher > #ukr {
+	position: relative;
+	float: left;
+	color: rgb(0, 126, 63);
+}
+
+#lang-switcher > #eng {
+	position: relative;
+	float: right;
+}
+
+#lang-background {
+	transition: 0.4s ease-in-out;
+	background-color: white;
+	border-radius: 3px 0 0 3px;
+}
+
+#eng:hover ~ #lang-background {
+	transform: translate(100%, 0);
+	border-radius: 0 3px 3px 0;
 }

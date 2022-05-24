@@ -11,8 +11,14 @@
 </head>
 
 <body>
-
     $(if chap-id)
+    
+    <div id="lang-switcher">
+        <div id="ukr">UKR</div>
+        <div id="eng">ENG</div>
+        <div id="lang-background"></div>
+    </div>
+
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
         <input type="hidden" name="password" />
