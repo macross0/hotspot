@@ -269,7 +269,31 @@ input[type=text]:focus {
 	background-position: 50% 0% !important;
 }
 
+#guest-connect {
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	-webkit-text-decoration-color: transparent;
+ 	-moz-text-decoration-color: transparent;
+	color: white;
+	text-align: center;
+	display: block;
+	transition: 0.2s ease-in-out;
+}
 
+#guest-connect:hover, #guest-connect:focus {
+	text-decoration-color: white;
+	-webkit-text-decoration-color: white;
+ 	-moz-text-decoration-color: white;
+}
+
+.connect-text {
+	position: fixed;
+	width: 290px;
+	bottom: 0;
+	margin-bottom: 20px;
+	color: #fff;
+	text-align: center;
+}
 
 table {
 	border-collapse: collapse;
@@ -298,39 +322,6 @@ table td:first-child {
 	* {
 		font-size: 14px !important
 	}
-}
-
-.link-kit {
-	position: relative;
-	display: inline-block;
-	margin: 4px 0;
-	padding: 10px 0 10px;
-	text-align: center;
-	width: 100%;
-	background-color: #3e4d59;
-	border-radius: 5px;
-	text-decoration: none;
-	color: white;
-}
-
-.link-kit:hover {
-	background-color: #33404a;
-	transition: 0.3s;
-
-}
-
-#guest-connect {
-	margin-top: 10px;
-	color: #fff;
-	text-align: center;
-	width: 100%;
-	display: block;
-}
-
-.connect-text {
-	margin: 20px;
-	color: #fff;
-	text-align: center;
 }
 
 .wrap[fill-background] {
