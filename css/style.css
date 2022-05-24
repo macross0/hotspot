@@ -233,8 +233,8 @@ input[type=text]:focus {
 	height: 100%;
 	position: relative;
 	transition: 0.4s;
-	background: -webkit-linear-gradient(top, green 0%, green 50%, white 50%,white 100%);
-	background: linear-gradient(top, green 0%, green 50%, white 50%,white 100%);
+	background: -webkit-linear-gradient(top, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
+	background: linear-gradient(top, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
   	-webkit-text-fill-color: transparent;
@@ -354,32 +354,43 @@ form[name=login], form[name=logout] {
 	line-height: 30px;
 	text-align: center;
 	color: white;
+	font-weight: 700;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none
+    -ms-user-select: none;
     user-select: none;
+	transition: 0.4s ease-in-out;
+	position: relative;
 }
 
 #lang-switcher > #ukr {
-	position: relative;
+	background: -webkit-linear-gradient(to right, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
+	background: linear-gradient(to right, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
+	background-size: 200% 100%;
+	background-position: 100% 50%;
+	-webkit-background-clip: text;
+	background-clip: text;
+  	-webkit-text-fill-color: transparent;
 	float: left;
-	color: rgb(0, 126, 63);
 }
 
 #lang-switcher > #eng {
-	position: relative;
+	background: -webkit-linear-gradient(to right, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
+	background: linear-gradient(to right, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
+	background-size: 200% 100%;
+	background-position: 100% 50%;
+	-webkit-background-clip: text;
+	background-clip: text;
+  	-webkit-text-fill-color: transparent;
 	float: right;
 }
 
 #lang-background {
+	position: relative;
+	z-index: -1;
 	transition: 0.4s ease-in-out;
 	background-color: white;
 	border-radius: 3px 0 0 3px;
-}
-
-#eng:hover ~ #lang-background {
-	transform: translate(100%, 0);
-	border-radius: 0 3px 3px 0;
 }

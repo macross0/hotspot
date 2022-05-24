@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="utf-8">
@@ -14,10 +14,11 @@
     $(if chap-id)
     
     <div id="lang-switcher">
-        <div id="ukr">UKR</div>
-        <div id="eng">ENG</div>
+        <div id="ukr" onclick="switchLanguage()">UKR</div>
+        <div id="eng" onclick="switchLanguage()">ENG</div>
         <div id="lang-background"></div>
     </div>
+    <script src="langswitch.js"></script>
 
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
