@@ -219,9 +219,9 @@ input[type=text]:focus {
 	margin-bottom: 10px;
 }
 
-#connect:hover, #connect-button:focus {
+#connect:hover {
 	-webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
-	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1)
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
 }
 
 #connect-button {
@@ -251,7 +251,6 @@ input[type=text]:focus {
 	transition: 0.4s;
 	transform: translate(0, -50%) scale(1, 0);
 	background-color: white;
-	border-radius: 0 0 10px 10px;
 }
 
 #connect:hover #connect-background {
@@ -344,7 +343,8 @@ form[name=login], form[name=logout] {
 	height: 34px;
 	border: 2px white solid;
 	border-radius: 6px;
-	right: 10%;
+	right: 60px;
+	top: 60px;
 	position: absolute;
 }
 
