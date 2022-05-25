@@ -220,7 +220,7 @@ input[type=text]:focus {
 }
 
 #connect:hover {
-	-webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
 	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
 }
 
