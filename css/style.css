@@ -292,12 +292,9 @@ input[type=text]:focus {
 }
 
 .connect-text {
-	position: fixed;
-	width: 290px;
-	bottom: 0;
-	margin-bottom: 20px;
-	color: #fff;
+	color: white;
 	text-align: center;
+	margin: auto;
 }
 
 table {

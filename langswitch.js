@@ -64,6 +64,6 @@ function updateSwitcher(self, startup = false) {
     }
 }
 
-function changeLanguage(language) {
-
-}
+// function changeLanguage(language) {
+    
+// }
