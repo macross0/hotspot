@@ -49,8 +49,9 @@ function updateSwitcher(self, startup = false) {
 
         self.style.cursor = "default";
         buttonENG.style.cursor = "pointer";
+        changeLanguage(true, startup);
     }
-    else{
+    else {
         let buttonUKR = document.getElementById("ukr");
         
         self.style.backgroundPosition = "0 0";
@@ -61,9 +62,47 @@ function updateSwitcher(self, startup = false) {
 
         self.style.cursor = "default";
         buttonUKR.style.cursor = "pointer";
+        changeLanguage(false, startup);
     }
 }
 
-// function changeLanguage(language) {
+function changeLanguage(isUKR, startup = false) {
+
+    var textArray = document.querySelectorAll("#connect-hint, [type=text], [type=password], #connect-button, #guest-connect, #footer-text");
     
-// }
+    if (!startup) {
+        textArray.forEach(element => {
+            element.style.transition = '0.2s ease-in-out';
+            element.style.opacity = '0';
+        }); 
+
+        setTimeout(function() {
+            replaceText(isUKR);
+            textArray.forEach(element => {
+                element.style.opacity = '1';
+            });
+        }, 200);
+    }
+    else {
+        replaceText(isUKR);
+    }
+
+    function replaceText(isUKR) {
+        if (isUKR) {
+            textArray[0].textContent = "Для підключення до інтернету використовуйте свій логін та цифровий пароль";
+            textArray[1].setAttribute("placeholder", "Логін");
+            textArray[2].setAttribute("placeholder", "Пароль");
+            textArray[3].setAttribute("value", "Під'єднатися");
+            textArray[4].textContent = "Під'єднатися як гість з обмеженими можливостями";
+            textArray[5].textContent = "Відділ КІТ ЛНУП";
+        }
+        else {
+            textArray[0].textContent = "Use your login and digital password to connect to the Internet";
+            textArray[1].setAttribute("placeholder", "Login");
+            textArray[2].setAttribute("placeholder", "Password");
+            textArray[3].setAttribute("value", "Connect");
+            textArray[4].textContent = "Connect as guest with connection speed restrictions";
+            textArray[5].textContent = "CIT Department of LNEU";
+        }
+    }
+}

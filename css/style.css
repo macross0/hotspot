@@ -397,3 +397,7 @@ form[name=login], form[name=logout] {
 	background-color: white;
 	border-radius: 3px 0 0 3px;
 }
+
+.space-below {
+	margin-bottom: 20px;
+}

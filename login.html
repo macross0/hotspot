@@ -48,13 +48,13 @@
 
 
                     <p class="info $(if error)alert$(endif)">
-                        <!-- $(if error == "")Для підключення використовуйте свою корпоративну адресу та пароль до інтернету$(endif)<br>
+                        <!-- $(if error == "")--><p class="connect-text space-below" id="connect-hint">Для підключення до інтернету використовуйте свій логін та цифровий пароль</p><!--$(endif)<br>-->
 
-                        $(if error)$(error)$(endif) -->
+                        <!--$(if error)$(error)$(endif) -->
                     </p>
                     <label>
                         <img class="ico" src="img/userGreen.svg" alt="#" />
-                        <input name="username" type="text" value="$(username)" placeholder="Корпоративна адреса" />
+                        <input name="username" type="text" value="$(username)" placeholder="Логін" />
                     </label>
 
                     <label>
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <p class="connect-text">Відділ КІТ ЛНУП</p>
+    <p class="connect-text" id="footer-text">Відділ КІТ ЛНУП</p>
 </body>
 
 </html>
