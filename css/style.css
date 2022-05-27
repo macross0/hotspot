@@ -306,10 +306,16 @@ input[type=text]:focus {
  	-moz-text-decoration-color: white;
 }
 
-.connect-text {
+#connect-hint, #footer-text {
 	color: white;
 	text-align: center;
 	margin: auto;
+}
+
+#connect-hint, #guest-connect {
+	line-height: 20px;
+    height: 40px;
+	margin-bottom: 20px;
 }
 
 table {
@@ -319,7 +325,7 @@ table {
 }
 
 table td {
-	color: #fff;
+	color: white;
 	border-bottom: 1px solid #e6e6e6;
 	padding: 10px 4px 10px 0
 }
