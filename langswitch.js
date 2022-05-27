@@ -68,18 +68,30 @@ function updateSwitcher(self, startup = false) {
 
 function changeLanguage(isUKR, startup = false) {
 
-    var textArray = document.querySelectorAll("#connect-hint, [type=text], [type=password], #connect-button, #guest-connect, #footer-text");
+    var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
     
     if (!startup) {
         textArray.forEach(element => {
-            element.style.transition = '0.2s ease-in-out';
-            element.style.opacity = '0';
+            if (element.id != "input-login" && element.id !== "input-password") {
+                element.style.transition = '0.2s ease-in-out';
+                element.style.opacity = '0';
+            }
+            else {
+                element.classList.remove('placeholder-opacity-full');
+                element.classList.add('placeholder-opacity-zero');
+            }
         }); 
 
         setTimeout(function() {
             replaceText(isUKR);
             textArray.forEach(element => {
-                element.style.opacity = '1';
+                if (element.id != "input-login" && element.id !== "input-password") {
+                    element.style.opacity = '1';
+                }
+                else {
+                    element.classList.remove('placeholder-opacity-zero');
+                    element.classList.add('placeholder-opacity-full');
+                }
             });
         }, 200);
     }
