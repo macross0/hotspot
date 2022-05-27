@@ -315,7 +315,14 @@ input[type=text]:focus {
 #connect-hint, #guest-connect {
 	line-height: 20px;
     height: 40px;
+}
+
+#connect-hint {
 	margin-bottom: 30px;
+}
+
+#guest-connect {
+	margin-bottom: 20px;
 }
 
 table {
