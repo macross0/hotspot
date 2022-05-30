@@ -230,6 +230,7 @@ select:-webkit-autofill:focus {
 	-moz-text-fill-color: rgb(0, 126, 63);
 	-ms-text-fill-color: rgb(0, 126, 63);
 	-o-text-fill-color: rgb(0, 126, 63);
+	transition: 0.2s ease-in-out !important;
 }
 
 .placeholder-opacity-zero::-webkit-input-placeholder,
@@ -242,9 +243,7 @@ select:-webkit-autofill:focus {
 .placeholder-opacity-zero:-webkit-autofill,
 .placeholder-opacity-zero:-webkit-autofill:hover,
 .placeholder-opacity-zero:-webkit-autofill:focus {
-	transition: opacity 0.2s ease-in-out;
-	-moz-transition: opacity 0.2s ease-in-out;
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .placeholder-opacity-full::-webkit-input-placeholder,
@@ -257,9 +256,7 @@ select:-webkit-autofill:focus {
 .placeholder-opacity-full:-webkit-autofill,
 .placeholder-opacity-full:-webkit-autofill:hover,
 .placeholder-opacity-full:-webkit-autofill:focus {
-	transition: opacity 0.2s ease-in-out;
-	-moz-transition: opacity 0.2s ease-in-out;
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 input[type=password]:focus,

@@ -68,6 +68,8 @@ function updateSwitcher(self, startup = false) {
 
 function changeLanguage(isUKR, startup = false) {
 
+    let isFirefox = navigator.userAgent.search("Firefox") > -1;
+
     var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
     
     if (!startup) {
@@ -76,7 +78,7 @@ function changeLanguage(isUKR, startup = false) {
                 element.style.transition = '0.2s ease-in-out';
                 element.style.opacity = '0';
             }
-            else {
+            else if (!isFirefox) {
                 element.classList.remove('placeholder-opacity-full');
                 element.classList.add('placeholder-opacity-zero');
             }
@@ -88,7 +90,7 @@ function changeLanguage(isUKR, startup = false) {
                 if (element.id != "input-login" && element.id !== "input-password") {
                     element.style.opacity = '1';
                 }
-                else {
+                else if (!isFirefox) {
                     element.classList.remove('placeholder-opacity-zero');
                     element.classList.add('placeholder-opacity-full');
                 }
