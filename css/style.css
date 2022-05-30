@@ -16,6 +16,36 @@ span {
 	font-weight: 500;
 }
 
+@-moz-document url-prefix() {
+	a,
+	body,
+	div,
+	form,
+	html,
+	img,
+	input,
+	label,
+	p,
+	span {
+		font-weight: 600 !important;
+	}
+
+	input[type=password]::placeholder,
+	input[type=text]::placeholder,
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover, 
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill, 
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		opacity: 1;
+	}
+}
+
 body,
 html {
 	min-height: 100%;
@@ -171,7 +201,7 @@ input:focus {
 
 input[type=password], input[type=text] {
 	width: 100%;
-	background-color: rgba(255, 255, 255, 1);
+	background-color: white;
 	height: 44px;
 	padding: 3px 20px 3px 40px;
 	margin-bottom: 10px;
@@ -187,10 +217,10 @@ input[type=password]::placeholder,
 input[type=text]::placeholder,
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus
+input:-webkit-autofill:focus,
 input:-webkit-autofill, 
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
@@ -202,13 +232,33 @@ select:-webkit-autofill:focus {
 	-o-text-fill-color: rgb(0, 126, 63);
 }
 
-.placeholder-opacity-zero::-webkit-input-placeholder {
+.placeholder-opacity-zero::-webkit-input-placeholder,
+.placeholder-opacity-zero::placeholder,
+.placeholder-opacity-zero:-webkit-autofill,
+.placeholder-opacity-zero:-webkit-autofill:hover, 
+.placeholder-opacity-zero:-webkit-autofill:focus,
+.placeholder-opacity-zero:-webkit-autofill, 
+.placeholder-opacity-zero:-webkit-autofill:hover,
+.placeholder-opacity-zero:-webkit-autofill,
+.placeholder-opacity-zero:-webkit-autofill:hover,
+.placeholder-opacity-zero:-webkit-autofill:focus {
 	transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
     opacity: 0;
 }
 
-.placeholder-opacity-full::-webkit-input-placeholder {
+.placeholder-opacity-full::-webkit-input-placeholder,
+.placeholder-opacity-full::placeholder,
+.placeholder-opacity-full:-webkit-autofill,
+.placeholder-opacity-full:-webkit-autofill:hover, 
+.placeholder-opacity-full:-webkit-autofill:focus,
+.placeholder-opacity-full:-webkit-autofill, 
+.placeholder-opacity-full:-webkit-autofill:hover,
+.placeholder-opacity-full:-webkit-autofill,
+.placeholder-opacity-full:-webkit-autofill:hover,
+.placeholder-opacity-full:-webkit-autofill:focus {
 	transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
     opacity: 1;
 }
 
@@ -296,7 +346,7 @@ input[type=text]:focus {
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none
+    -ms-user-select: none;
     user-select: none;
 }
 
