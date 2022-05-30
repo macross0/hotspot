@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    $(if Gecko)
+	    <style type="text/css"> span { font-weight: 600 !important;}</style>
+    $(endif)
     <!-- $(if chap-id) -->
     
     <div id="lang-switcher">
@@ -54,7 +57,7 @@
                     </p>
                     <label>
                         <img class="ico" src="img/userGreen.svg" alt="#" />
-                        <input id="input-login" name="username" type="text" value="$(username)" placeholder="Логін" />
+                        <input id="input-login" name="username" type="text" value="$(username)" placeholder="Логін" /> 
                     </label>
 
                     <label>
@@ -73,7 +76,7 @@
             </div>
         </div>
     </div>
-    <p id="footer-text">Відділ КІТ ЛНУП</p>
+    
 </body>
 
 </html>
