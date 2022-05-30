@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    $(if Gecko)
-	    <style type="text/css"> span { font-weight: 600 !important;}</style>
-    $(endif)
+    <!-- $(if Gecko)
+	    <style type="text/css"> a, body, div, form, html, img, input, label, p, span { font-weight: 600 !important;}</style>
+    $(endif) -->
     <!-- $(if chap-id) -->
     
     <div id="lang-switcher">
@@ -71,12 +71,11 @@
                     </div>
                     
                     <!-- $(if trial == 'yes')--><a id="guest-connect" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Під'єднатися як гість з обмеженими можливостями</a><!-- $(endif) -->
-
                 </form>
             </div>
         </div>
     </div>
-    
+    <p id="footer-text">Відділ КІТ ЛНУП</p>
 </body>
 
 </html>
