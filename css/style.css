@@ -55,6 +55,7 @@ html {
 body {
 	background: -webkit-linear-gradient(130deg, rgba(35%, 100%, 60%, 50%) 0%, rgb(37%, 67%, 50%, 25%) 50%), -webkit-linear-gradient(130deg, rgb(37%, 67%, 50%, 25%) 50%, rgb(7%,27%,15%, 100%) 100%), #007E3F;
 	background: linear-gradient(130deg, rgba(35%, 100%, 60%, 50%) 0%, rgb(37%, 67%, 50%, 25%) 50%), linear-gradient(130deg, rgb(37%, 67%, 50%, 25%) 50%, rgb(7%,27%,15%, 100%) 100%), #007E3F;
+	image-rendering:optimizeSpeed;
 }
 
 a {

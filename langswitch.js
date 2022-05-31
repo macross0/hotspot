@@ -109,11 +109,11 @@ function changeLanguage(isUKR, startup = false) {
 
     function replaceText(isUKR) {
         if (isUKR) {
-            textArray[0].textContent = "Для підключення до інтернету використовуйте свій логін та цифровий пароль";
+            textArray[0].textContent = "Для входу в мережу використовуйте свій логін та цифровий пароль";
             textArray[1].setAttribute("placeholder", "Логін");
             textArray[2].setAttribute("placeholder", "Пароль");
-            textArray[3].setAttribute("value", "Під'єднатися");
-            textArray[4].textContent = "Під'єднатися як гість з обмеженими можливостями";
+            textArray[3].setAttribute("value", "Вхід");
+            textArray[4].textContent = "Якщо у вас немає логіна та пароля, можете ввійти, як гість з обмеженими можливостями";
             textArray[5].textContent = "Відділ КІТ ЛНУП";
         }
         else {
@@ -121,7 +121,7 @@ function changeLanguage(isUKR, startup = false) {
             textArray[1].setAttribute("placeholder", "Login");
             textArray[2].setAttribute("placeholder", "Password");
             textArray[3].setAttribute("value", "Connect");
-            textArray[4].textContent = "Connect as guest with connection speed restrictions";
+            textArray[4].textContent = "If you do not have a login and password, you can connect as a guest with restrictions";
             textArray[5].textContent = "CIT Department of LNEU";
         }
     }
