@@ -113,7 +113,7 @@ function changeLanguage(isUKR, startup = false) {
             textArray[1].setAttribute("placeholder", "Логін");
             textArray[2].setAttribute("placeholder", "Пароль");
             textArray[3].setAttribute("value", "Вхід");
-            textArray[4].textContent = "Якщо у вас немає логіна та пароля, можете ввійти, як гість з обмеженими можливостями";
+            textArray[4].textContent = "Якщо у Вас немає логіна та пароля, Ви можете ввійти як гість з обмеженими можливостями";
             textArray[5].textContent = "Відділ КІТ ЛНУП";
         }
         else {
