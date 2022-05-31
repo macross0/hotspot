@@ -5,6 +5,7 @@ let oppositeLanguage;
 window.onload = startup;
 
 function startup() {
+    console.log("gay");
     var userLang = navigator.language || navigator.userLanguage;
 
     buttonUKR = document.getElementById("ukr");
