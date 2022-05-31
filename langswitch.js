@@ -12,7 +12,7 @@ function startup() {
     buttonUKR.style.transitionTimingFunction = "steps(1, jump-start)";
     buttonENG.style.transitionTimingFunction = "steps(1, jump-start)";
 
-    if (userLang == "uk" || userLang == "uk-UA" || userLang == "ukr") {
+    if (userLang == "uk" || userLang == "uk-UA" || userLang == "ukr" || userLang == "rus" || userLang == "ru-RU" || userLang == "ru") {
         oppositeLanguage = "eng";
         updateSwitcher(buttonUKR, true);
     }
