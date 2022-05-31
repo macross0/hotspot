@@ -6,28 +6,25 @@ window.onload = startup;
 
 function startup() {
     var userLang = navigator.language || navigator.userLanguage;
-    if (userLang == "uk" || "uk-UA" || "ukr") {
+
+    buttonUKR = document.getElementById("ukr");
+    buttonENG = document.getElementById("eng");
+    buttonUKR.style.transitionTimingFunction = "steps(1, jump-start)";
+    buttonENG.style.transitionTimingFunction = "steps(1, jump-start)";
+
+    if (userLang == "uk" || userLang == "uk-UA" || userLang == "ukr") {
         oppositeLanguage = "eng";
-
-        buttonUKR = document.getElementById("ukr");
-        buttonUKR.style.transitionTimingFunction = "steps(1, jump-start)";
         updateSwitcher(buttonUKR, true);
-
-        setTimeout(function () {
-            buttonUKR.style.transitionTimingFunction = "ease-in-out";
-        }, 100)
     }
     else {
         oppositeLanguage = "ukr";
-        
-        buttonENG = document.getElementById("eng");
-        buttonENG.style.transitionTimingFunction = "steps(1, jump-start)";
         updateSwitcher(buttonENG, true);
-
-        setTimeout(function () {
-            buttonENG.style.transitionTimingFunction = "ease-in-out";
-        }, 100)
     }
+
+    setTimeout(function () {
+        buttonUKR.style.transitionTimingFunction = "ease-in-out";
+        buttonENG.style.transitionTimingFunction = "ease-in-out";
+    }, 100)
 }
 
 function updateSwitcher(self, startup = false) {
@@ -37,6 +34,13 @@ function updateSwitcher(self, startup = false) {
     oppositeLanguage = (oppositeLanguage == "ukr" ? "eng" : "ukr");
 
     let background = document.getElementById("lang-background");
+
+    if (startup) {
+        background.style.transitionTimingFunction = "steps(1, jump-start)";
+    }
+    else {
+        background.style.transitionTimingFunction = "ease-in-out";
+    }
 
     if (self.id == "ukr") {
         let buttonENG = document.getElementById("eng");
@@ -49,11 +53,12 @@ function updateSwitcher(self, startup = false) {
 
         self.style.cursor = "default";
         buttonENG.style.cursor = "pointer";
+
         changeLanguage(true, startup);
     }
     else {
         let buttonUKR = document.getElementById("ukr");
-        
+
         self.style.backgroundPosition = "0 0";
         buttonUKR.style.backgroundPosition = "-100% 0";
 
@@ -62,6 +67,7 @@ function updateSwitcher(self, startup = false) {
 
         self.style.cursor = "default";
         buttonUKR.style.cursor = "pointer";
+        
         changeLanguage(false, startup);
     }
 }
