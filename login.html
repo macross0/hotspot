@@ -13,13 +13,13 @@
 <body>
 
     <!-- $(if Gecko)
-	    <style type="text/css"> a, body, div, form, html, img, input, label, p, span { font-weight: 600 !important;}</style>
+	    
     $(endif) -->
     <!-- $(if chap-id) -->
     
     <div id="lang-switcher">
-        <div id="ukr" onclick="updateSwitcher(this)">UKR</div>
-        <div id="eng" onclick="updateSwitcher(this)">ENG</div>
+        <div id="ukr" onclick="updateSwitcher(this, false)">UKR</div>
+        <div id="eng" onclick="updateSwitcher(this, false)">ENG</div>
         <div id="lang-background"></div>
     </div>
     <script src="langswitch.js"></script>
@@ -50,12 +50,11 @@
                     <input type="hidden" name="popup" value="true" />
                     <img src="img/GERBLNAU.svg" class="logo">
 
-
-                    <p class="info $(if error)alert$(endif)">
+                    <p class="info $(if error)alert$(endif)"></p>
                         <!-- $(if error == "")--><p id="connect-hint">Для підключення до інтернету використовуйте свій логін та цифровий пароль</p><!--$(endif)<br>-->
 
                         <!--$(if error)$(error)$(endif) -->
-                    </p>
+                    
                     <label>
                         <img class="ico" src="img/userGreen.svg" alt="#" />
                         <input id="input-login" name="username" type="text" value="$(username)" placeholder="Логін" /> 

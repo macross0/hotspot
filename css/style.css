@@ -58,9 +58,7 @@ body {
 	background: -ms-linear-gradient(130deg, rgba(35%, 100%, 60%, 50%) 0%, rgba(37%, 67%, 50%, 25%) 50%), -ms-linear-gradient(130deg, rgba(37%, 67%, 50%, 25%) 50%, rgba(7%, 27%, 15%, 100%) 100%), #007E3F;
 	background: -moz-linear-gradient(310deg, rgba(35%, 100%, 60%, 50%) 0%, rgba(37%, 67%, 50%, 25%) 50%), -moz-linear-gradient(310deg, rgba(37%, 67%, 50%, 25%) 50%, rgba(7%, 27%, 15%, 100%) 100%), #007E3F;
 	background: -o-linear-gradient(130deg, rgba(35%, 100%, 60%, 50%) 0%, rgba(37%, 67%, 50%, 25%) 50%), -o-linear-gradient(130deg, rgba(37%, 67%, 50%, 25%) 50%, rgba(7%, 27%, 15%, 100%) 100%), #007E3F;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#59ff99", endColorstr="#5eab80");
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#59ff99, endColorstr=#5eab80)";
-
+	background-color: #007E3F;
 }
 
 a {
@@ -267,8 +265,8 @@ select:-webkit-autofill:focus {
 
 input[type=password]:focus,
 input[type=text]:focus {
-	-webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
-	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1)
+	-webkit-box-shadow: 0 0 5px 0 white;
+	box-shadow: 0 0 0 2px white;
 }
 
 .bt {
@@ -288,8 +286,8 @@ input[type=text]:focus {
 }
 
 #connect:hover {
-	-webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
-	box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0 0 0 2px white;
+	box-shadow: 0 0 0 2px white;
 }
 
 #connect-button {
@@ -304,6 +302,7 @@ input[type=text]:focus {
 	background: -webkit-linear-gradient(top, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
 	background: linear-gradient(top, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
 	-webkit-background-clip: text;
+	color: green;
 	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	background-position: 50% 100%;
@@ -425,6 +424,7 @@ form[name=login], form[name=logout] {
 	top: 60px;
 	position: absolute;
 	transition: 0.4s ease-in-out;
+	z-index: 2;
 }
 
 #lang-switcher > div {

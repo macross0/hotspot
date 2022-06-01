@@ -1,11 +1,13 @@
 let buttonUKR, buttonENG;
 let oppositeLanguage;
 
+let isFirefox = navigator.userAgent.search("Firefox") > -1;
+
 // Run auto language switch at page load
 window.onload = startup;
 
 function startup() {
-    console.log("gay");
+
     var userLang = navigator.language || navigator.userLanguage;
 
     buttonUKR = document.getElementById("ukr");
@@ -28,7 +30,7 @@ function startup() {
     }, 100)
 }
 
-function updateSwitcher(self, startup = false) {
+function updateSwitcher(self, startup) {
     if (self.id == oppositeLanguage && !startup) {
         return;
     }
@@ -73,14 +75,12 @@ function updateSwitcher(self, startup = false) {
     }
 }
 
-function changeLanguage(isUKR, startup = false) {
-
-    let isFirefox = navigator.userAgent.search("Firefox") > -1;
+function changeLanguage(isUKR, startup) {
 
     var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
     
     if (!startup) {
-        textArray.forEach(element => {
+        Array.prototype.forEach.call(textArray, function(element) {
             if (element.id != "input-login" && element.id !== "input-password") {
                 element.style.transition = '0.2s ease-in-out';
                 element.style.opacity = '0';
@@ -93,7 +93,7 @@ function changeLanguage(isUKR, startup = false) {
 
         setTimeout(function() {
             replaceText(isUKR);
-            textArray.forEach(element => {
+            Array.prototype.forEach.call(textArray, function(element) {
                 if (element.id != "input-login" && element.id !== "input-password") {
                     element.style.opacity = '1';
                 }
