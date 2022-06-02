@@ -12,17 +12,7 @@
 
 <body>
 
-    <!-- $(if Gecko)
-	    
-    $(endif) -->
     <!-- $(if chap-id) -->
-    
-    <div id="lang-switcher">
-        <div id="ukr" onclick="updateSwitcher(this, false)">UKR</div>
-        <div id="eng" onclick="updateSwitcher(this, false)">ENG</div>
-        <div id="lang-background"></div>
-    </div>
-    <script src="langswitch.js"></script>
 
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
@@ -42,6 +32,14 @@
 
     </script>
     <!-- $(endif) -->
+
+    <div id="lang-switcher">
+        <div id="ukr" onclick="updateSwitcher(this, false)">UKR</div>
+        <div id="eng" onclick="updateSwitcher(this, false)">ENG</div>
+        <div id="lang-background"></div>
+    </div>
+    <script src="langswitch.js"></script>
+
     <div class="ie-fixMinHeight">
         <div class="main">
             <div class="wrap animated fadeIn">

@@ -2,32 +2,43 @@ let buttonUKR, buttonENG;
 let oppositeLanguage;
 
 let isFirefox = navigator.userAgent.search("Firefox") > -1;
+let isIE = navigator.userAgent.search('MSIE ') > -1 || navigator.userAgent.search('Trident/') > -1;
 
 // Run auto language switch at page load
 window.onload = startup;
 
 function startup() {
 
+    if (isIE) {
+        var switcher = document.getElementById("lang-switcher");
+        switcher.parentNode.removeChild(switcher);
+    }
+
     var userLang = navigator.language || navigator.userLanguage;
-
-    buttonUKR = document.getElementById("ukr");
-    buttonENG = document.getElementById("eng");
-    buttonUKR.style.transitionTimingFunction = "steps(1, jump-start)";
-    buttonENG.style.transitionTimingFunction = "steps(1, jump-start)";
-
-    if (userLang == "uk" || userLang == "uk-UA" || userLang == "ukr" || userLang == "rus" || userLang == "ru-RU" || userLang == "ru") {
-        oppositeLanguage = "eng";
-        updateSwitcher(buttonUKR, true);
+    
+    try {
+        buttonUKR = document.getElementById("ukr");
+        buttonENG = document.getElementById("eng");
+        buttonUKR.style.transitionTimingFunction = "steps(1, jump-start)";
+        buttonENG.style.transitionTimingFunction = "steps(1, jump-start)";
+    
+        if (userLang == "uk" || userLang == "uk-UA" || userLang == "ukr" || userLang == "rus" || userLang == "ru-RU" || userLang == "ru") {
+            oppositeLanguage = "eng";
+            updateSwitcher(buttonUKR, true);
+        }
+        else {
+            oppositeLanguage = "ukr";
+            updateSwitcher(buttonENG, true);
+        }
+    
+        setTimeout(function () {
+            buttonUKR.style.transitionTimingFunction = "ease-in-out";
+            buttonENG.style.transitionTimingFunction = "ease-in-out";
+        }, 100);
     }
-    else {
-        oppositeLanguage = "ukr";
-        updateSwitcher(buttonENG, true);
-    }
-
-    setTimeout(function () {
-        buttonUKR.style.transitionTimingFunction = "ease-in-out";
-        buttonENG.style.transitionTimingFunction = "ease-in-out";
-    }, 100)
+    catch (TypeError) {
+        return;
+    } 
 }
 
 function updateSwitcher(self, startup) {
