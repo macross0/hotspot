@@ -46,6 +46,21 @@ span {
 	}
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	a,
+	body,
+	div,
+	form,
+	html,
+	img,
+	input,
+	label,
+	p,
+	span {
+		font-weight: 600 !important;
+	}
+}
+
 body,
 html {
 	min-height: 100%;
@@ -93,6 +108,26 @@ p::first-letter {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	transition: 0.4s ease-in-out;
+}
+
+img,
+input::placeholder,
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .ie-fixMinHeight {
@@ -302,7 +337,7 @@ input[type=text]:focus {
 	background: -webkit-linear-gradient(top, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
 	background: linear-gradient(top, rgb(0, 126, 63) 0%, rgb(0, 126, 63) 50%, white 50%,white 100%);
 	-webkit-background-clip: text;
-	color: green;
+	color: white;
 	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	background-position: 50% 100%;
@@ -333,6 +368,7 @@ input[type=text]:focus {
 	background-clip: text;
   	-webkit-text-fill-color: transparent;
 	background-position: 50% 0% !important;
+	color: rgb(0, 126, 63);
 }
 
 #guest-connect {

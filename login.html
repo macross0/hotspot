@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- $(if chap-id) -->
+    $(if chap-id)
 
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
@@ -31,7 +31,7 @@
         }
 
     </script>
-    <!-- $(endif) -->
+    $(endif)
 
     <div id="lang-switcher">
         <div id="ukr" onclick="updateSwitcher(this, false)">UKR</div>
@@ -49,9 +49,9 @@
                     <img src="img/GERBLNAU.svg" class="logo">
 
                     <p class="info $(if error)alert$(endif)"></p>
-                        <!-- $(if error == "")--><p id="connect-hint">Для підключення до інтернету використовуйте свій логін та цифровий пароль</p><!--$(endif)<br>-->
+                        $(if error == "")<p id="connect-hint">Для входу в мережу використовуйте свій логін та цифровий пароль</p>$(endif)<br>
 
-                        <!--$(if error)$(error)$(endif) -->
+                        $(if error)$(error)$(endif)
                     
                     <label>
                         <img class="ico" src="img/userGreen.svg" alt="#" />
@@ -68,7 +68,7 @@
                         <div id="connect-background"></div>
                     </div>
                     
-                    <!-- $(if trial == 'yes')--><a id="guest-connect" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Якщо у Вас немає логіна та пароля, Ви можете ввійти як гість з обмеженими можливостями</a><!-- $(endif) -->
+                    $(if trial == 'yes')<a id="guest-connect" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Якщо у Вас немає логіна та пароля, Ви можете ввійти як гість з обмеженими можливостями</a>$(endif)
                 </form>
             </div>
         </div>
