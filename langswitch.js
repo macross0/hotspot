@@ -127,11 +127,25 @@ function changeLanguage(sender, isUKR, startup) {
         }, 200);
 
         // Restore transitions at the end
-        Array.prototype.forEach.call(textArray, function(element) {
-            if (element.id != "input-login" && element.id !== "input-password") {
-                element.style.transition = '0.4s ease-out';
+        setTimeout(function() {
+            if (sender == "login") {
+                Array.prototype.forEach.call(textArray, function(element) {
+                    if (element.id != "input-login" && element.id !== "input-password") {
+                        element.style.transition = '0.4s ease-out';
+                    }
+                });
+            }     
+            else if (sender == "status") {
+                Array.prototype.forEach.call(textArray, function(element) {
+                    if (element.className == "outside-link") {
+                        element.style.transition = 'box-shadow 0.25s ease-out';
+                    }
+                    else {
+                        element.style.transition = '0.4s ease-out';
+                    }
+                });
             }
-        });
+        }, 400);
     }
     else {
         replaceText(sender, isUKR);
