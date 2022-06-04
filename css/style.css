@@ -244,10 +244,10 @@ input[type=password], input[type=text] {
 	padding: 3px 20px 3px 40px;
 	margin-bottom: 10px;
 	border-radius: 6px;
-	-webkit-transition: -webkit-box-shadow 0.4s ease-out;
-	transition: -webkit-box-shadow 0.4s ease-out;
-	transition: box-shadow 0.4s ease-out;
-	transition: box-shadow 0.4s ease-out, -webkit-box-shadow 0.4s ease-out;
+	-webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
 	color: rgb(0, 126, 63);
 }
 
@@ -312,10 +312,10 @@ input[type=text]:focus {
 	height: 44px;
 	border: 2px solid white;
 	border-radius: 6px;
-	-webkit-transition: -webkit-box-shadow 0.4s ease-out;
-	transition: -webkit-box-shadow 0.4s ease-out;
-	transition: box-shadow 0.4s ease-out;
-	transition: box-shadow 0.4s ease-out, -webkit-box-shadow 0.4s ease-out;
+	-webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: -webkit-box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out;
+	transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
 	margin-bottom: 10px;
 }
 
@@ -349,20 +349,20 @@ input[type=text]:focus {
 	height: 100%;
 	top: -100%;
 	z-index: -1;
-	transition: 0.4s ease-out;
+	transition: 0.4s ease-in-out;
 	transform: translate(0, -50%) scale(1, 0);
 	background-color: white;
 }
 
 #connect:hover #connect-background {
-	transition: 0.4s ease-out;
+	transition: 0.4s ease-in-out;
 	transform: translate(0, 0%) scale(1, 1);
 	background-color: white;
 	border-radius: 0 0 2px 2px;
 }
 
 #connect:hover #connect-button {
-	transition: 0.4s ease-out;
+	transition: 0.4s ease-in-out;
 	-webkit-background-clip: text;
 	background-clip: text;
   	-webkit-text-fill-color: transparent;

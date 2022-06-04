@@ -103,7 +103,7 @@ function changeLanguage(sender, isUKR, startup) {
         // Fade out
         Array.prototype.forEach.call(textArray, function(element) {
             if (element.id != "input-login" && element.id !== "input-password") {
-                element.style.transition = 'opacity 0.2s ease-out';
+                element.style.transition = 'opacity 0.2s ease-in-out';
                 element.style.opacity = '0';
             }
             else if (!isFirefox) {
@@ -131,17 +131,17 @@ function changeLanguage(sender, isUKR, startup) {
             if (sender == "login") {
                 Array.prototype.forEach.call(textArray, function(element) {
                     if (element.id != "input-login" && element.id !== "input-password") {
-                        element.style.transition = '0.4s ease-out';
+                        element.style.transition = '0.4s ease-in-out';
                     }
                 });
             }     
             else if (sender == "status") {
                 Array.prototype.forEach.call(textArray, function(element) {
                     if (element.className == "outside-link") {
-                        element.style.transition = 'box-shadow 0.25s ease-out';
+                        element.style.transition = 'box-shadow 0.25s ease-in-out';
                     }
                     else {
-                        element.style.transition = '0.4s ease-out';
+                        element.style.transition = '0.4s ease-in-out';
                     }
                 });
             }
