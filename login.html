@@ -34,8 +34,8 @@
     $(endif)
 
     <div id="lang-switcher">
-        <div id="ukr" onclick="updateSwitcher(this, false)">UKR</div>
-        <div id="eng" onclick="updateSwitcher(this, false)">ENG</div>
+        <div id="ukr" onclick="updateSwitcher(this, 'login', false)">UKR</div>
+        <div id="eng" onclick="updateSwitcher(this, 'login', false)">ENG</div>
         <div id="lang-background"></div>
     </div>
     <script src="langswitch.js"></script>
@@ -68,7 +68,7 @@
                         <div id="connect-background"></div>
                     </div>
                     
-                    $(if trial == 'yes')<a id="guest-connect" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Якщо у Вас немає логіна та пароля, Ви можете ввійти як гість з обмеженими можливостями</a>$(endif)
+                    $(if trial == 'yes')<a id="guest-connect" class="link" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Якщо у Вас немає логіна та пароля, натисніть тут, щоб увійти як гість з обмеженими можливостями</a>$(endif)
                 </form>
             </div>
         </div>

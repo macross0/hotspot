@@ -1,34 +1,39 @@
-let buttonUKR, buttonENG;
-let oppositeLanguage;
+var buttonUKR = document.getElementById("ukr");
+var buttonENG = document.getElementById("eng");
+var oppositeLanguage;
 
-let isFirefox = navigator.userAgent.search("Firefox") > -1;
-let isIE = navigator.userAgent.search('MSIE ') > -1 || navigator.userAgent.search('Trident/') > -1;
+var isFirefox = navigator.userAgent.search("Firefox") > -1;
+var isIE = navigator.userAgent.search('MSIE ') > -1 || navigator.userAgent.search('Trident/') > -1;
 
 // Run auto language switch at page load
 window.onload = startup;
 
 function startup() {
 
+    // Detect html filename and set sender variable for proper text replacement
+    let filename = window.location.pathname.split("/").pop();
+    if (filename == "login.html")
+        var sender = "login";
+    else if (filename == "status.html")
+        var sender = "status";
+
     if (isIE) {
         var switcher = document.getElementById("lang-switcher");
         switcher.parentNode.removeChild(switcher);
     }
-
-    var userLang = navigator.language || navigator.userLanguage;
     
     try {
-        buttonUKR = document.getElementById("ukr");
-        buttonENG = document.getElementById("eng");
         buttonUKR.style.transitionTimingFunction = "steps(1, jump-start)";
         buttonENG.style.transitionTimingFunction = "steps(1, jump-start)";
     
+        var userLang = navigator.language || navigator.userLanguage;
         if (userLang == "uk" || userLang == "uk-UA" || userLang == "ukr" || userLang == "rus" || userLang == "ru-RU" || userLang == "ru") {
             oppositeLanguage = "eng";
-            updateSwitcher(buttonUKR, true);
+            updateSwitcher(buttonUKR, sender, true);
         }
         else {
             oppositeLanguage = "ukr";
-            updateSwitcher(buttonENG, true);
+            updateSwitcher(buttonENG, sender, true);
         }
     
         setTimeout(function () {
@@ -36,12 +41,14 @@ function startup() {
             buttonENG.style.transitionTimingFunction = "ease-in-out";
         }, 100);
     }
-    catch (TypeError) {
+    catch(TypeError) {
+        console.log("something is borked");
         return;
-    } 
+    }
 }
 
-function updateSwitcher(self, startup) {
+
+function updateSwitcher(self, sender, startup) {
     if (self.id == oppositeLanguage && !startup) {
         return;
     }
@@ -57,8 +64,6 @@ function updateSwitcher(self, startup) {
     }
 
     if (self.id == "ukr") {
-        let buttonENG = document.getElementById("eng");
-
         self.style.backgroundPosition = "0 0";
         buttonENG.style.backgroundPosition = "100% 0";
 
@@ -68,11 +73,9 @@ function updateSwitcher(self, startup) {
         self.style.cursor = "default";
         buttonENG.style.cursor = "pointer";
 
-        changeLanguage(true, startup);
+        changeLanguage(sender, true, startup);
     }
     else {
-        let buttonUKR = document.getElementById("ukr");
-
         self.style.backgroundPosition = "0 0";
         buttonUKR.style.backgroundPosition = "-100% 0";
 
@@ -82,18 +85,24 @@ function updateSwitcher(self, startup) {
         self.style.cursor = "default";
         buttonUKR.style.cursor = "pointer";
         
-        changeLanguage(false, startup);
+        changeLanguage(sender, false, startup);
     }
 }
 
-function changeLanguage(isUKR, startup) {
+function changeLanguage(sender, isUKR, startup) {
 
-    var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
-    
+    if (sender == "login")
+        var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
+    else if (sender == "status")
+        var textArray = document.querySelectorAll("h1, .outside-link, #connect-button, #footer-link");
+
+        // remove this later before release
+        console.log(textArray);
+
     if (!startup) {
         Array.prototype.forEach.call(textArray, function(element) {
             if (element.id != "input-login" && element.id !== "input-password") {
-                element.style.transition = '0.2s ease-in-out';
+                element.style.transition = 'opacity 0.2s ease-in-out';
                 element.style.opacity = '0';
             }
             else if (!isFirefox) {
@@ -103,7 +112,7 @@ function changeLanguage(isUKR, startup) {
         }); 
 
         setTimeout(function() {
-            replaceText(isUKR);
+            replaceText(sender, isUKR);
             Array.prototype.forEach.call(textArray, function(element) {
                 if (element.id != "input-login" && element.id !== "input-password") {
                     element.style.opacity = '1';
@@ -116,25 +125,54 @@ function changeLanguage(isUKR, startup) {
         }, 200);
     }
     else {
-        replaceText(isUKR);
+        replaceText(sender, isUKR);
     }
 
-    function replaceText(isUKR) {
-        if (isUKR) {
-            textArray[0].textContent = "Для входу в мережу використовуйте свій логін та цифровий пароль";
-            textArray[1].setAttribute("placeholder", "Логін");
-            textArray[2].setAttribute("placeholder", "Пароль");
-            textArray[3].setAttribute("value", "Вхід");
-            textArray[4].textContent = "Якщо у Вас немає логіна та пароля, Ви можете ввійти як гість з обмеженими можливостями";
-            textArray[5].textContent = "Відділ КІТ ЛНУП";
+    function replaceText(sender, isUKR) {
+        if (sender == "login") {
+            if (isUKR) {
+                textArray[0].textContent = "Для входу в мережу використовуйте свій логін та цифровий пароль";
+                textArray[1].setAttribute("placeholder", "Логін");
+                textArray[2].setAttribute("placeholder", "Пароль");
+                textArray[3].setAttribute("value", "Вхід");
+                textArray[4].textContent = "Якщо у Вас немає логіна та пароля, натисніть тут, щоб увійти як гість з обмеженими можливостями";
+                textArray[5].textContent = "Відділ КІТ ЛНУП";
+            }
+            else {
+                textArray[0].textContent = "Use your login and digital password to connect to the Internet";
+                textArray[1].setAttribute("placeholder", "Login");
+                textArray[2].setAttribute("placeholder", "Password");
+                textArray[3].setAttribute("value", "Connect");
+                textArray[4].textContent = "If you do not have a login and password, click here to connect as a guest with restrictions";
+                textArray[5].textContent = "CIT Department of LNEU";
+            }
         }
-        else {
-            textArray[0].textContent = "Use your login and digital password to connect to the Internet";
-            textArray[1].setAttribute("placeholder", "Login");
-            textArray[2].setAttribute("placeholder", "Password");
-            textArray[3].setAttribute("value", "Connect");
-            textArray[4].textContent = "If you do not have a login and password, you can connect as a guest with restrictions";
-            textArray[5].textContent = "CIT Department of LNEU";
+
+        else if (sender == "status") {
+            if (isUKR) {
+                if (textArray[0].id == "trial")
+                    textArray[0].textContent = "Ви під'єднались в гостьовому режимі!";
+                else
+                    textArray[0].textContent = "Ви під'єднались як ";
+                textArray[1].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
+                textArray[1].style.lineHeight = "20px";
+
+                textArray[2].textContent = "Технічна підтримка";
+                textArray[3].setAttribute("value", "Вихід з мережі");
+                textArray[4].textContent = "Відділ КІТ ЛНУП";
+            }
+            else {  
+                if (textArray[0].id == "trial")
+                    textArray[0].textContent = "You connected as guest!";
+                else
+                    textArray[0].textContent = "You connected as ";
+                textArray[1].textContent = "Official Lviv National Enviromental University website";
+                textArray[1].style.lineHeight = "30px";
+
+                textArray[2].textContent = "Technical support";
+                textArray[3].setAttribute("value", "Disconnect");
+                textArray[4].textContent = "CIT Department of LNEU";
+            }
         }
     }
 }

@@ -6,8 +6,7 @@ html,
 img,
 input,
 label,
-p,
-span {
+p {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,8 +24,7 @@ span {
 	img,
 	input,
 	label,
-	p,
-	span {
+	p {
 		font-weight: 600 !important;
 	}
 
@@ -55,8 +53,7 @@ span {
 	img,
 	input,
 	label,
-	p,
-	span {
+	p {
 		font-weight: 600 !important;
 	}
 }
@@ -155,10 +152,12 @@ select:-webkit-autofill:focus {
 	fill: #fff
 }
 
-h1 {
+h1, h1 > span {
 	text-align: center;
 	color: #fff;
-	font-size: 24px !important
+	font-size: 24px !important;
+	line-height: 32px;
+    height: 64px;
 }
 
 * {
@@ -371,15 +370,7 @@ input[type=text]:focus {
 	color: rgb(0, 126, 63);
 }
 
-#guest-connect {
-	text-decoration: underline;
-	text-decoration-color: transparent;
-	-webkit-text-decoration-color: transparent;
- 	-moz-text-decoration-color: transparent;
-	color: white;
-	text-align: center;
-	display: block;
-	transition: 0.2s ease-in-out;
+.link {
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -388,10 +379,37 @@ input[type=text]:focus {
     user-select: none;
 }
 
-#guest-connect:hover, #guest-connect:focus {
-	text-decoration-color: white;
-	-webkit-text-decoration-color: white;
- 	-moz-text-decoration-color: white;
+.outside-link-parent {
+	border: 2px white dotted;
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+
+.outside-link {
+	position: relative;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	text-align: center;
+	display: block;
+	border-radius: 3px;
+}
+
+.outside-link#uni-link {
+	height: 80px !important;
+}
+
+.outside-link:hover {
+	transition: box-shadow 0.25s ease-in-out;
+	box-shadow: 0 0 0 2px;
+}
+
+#footer-link {
+	display: block;
+	color: white;
+	text-align: center;
+	margin: auto;
+	width: fit-content;	
 }
 
 #connect-hint, #footer-text {
@@ -411,6 +429,10 @@ input[type=text]:focus {
 
 #guest-connect {
 	margin-bottom: 20px;
+	text-decoration: underline;
+	color: white;
+	text-align: center;
+	display: block;
 }
 
 table {
