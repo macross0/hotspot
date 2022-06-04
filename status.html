@@ -1,8 +1,8 @@
 <html>
 <head>
-$(if refresh-timeout)
+<!-- $(if refresh-timeout) -->
 <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
-$(endif)
+<!-- $(endif) -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
 <meta http-equiv="pragma" content="no-cache">
@@ -11,7 +11,7 @@ $(endif)
 <link rel="stylesheet" href="css/style.css">
 <script>
 
-$(if advert-pending == 'yes')
+// $(if advert-pending == 'yes')
     var popup = '';
     function focusAdvert() {
 	if (window.focus) popup.focus();
@@ -20,7 +20,7 @@ $(if advert-pending == 'yes')
 	popup = open('$(link-advert)', 'hotspot_advert', '');
 	setTimeout("focusAdvert()", 1000);
     }
-$(endif)
+// $(endif)
     function openLogout() {
 	if (window.name != 'hotspot_status') return true;
         open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
@@ -42,17 +42,17 @@ $(endif)
     <div class="ie-fixMinHeight">
         <div class="main">
             <div fill-background class="wrap">
-                $(if login-by == 'trial')
+                <!-- $(if login-by == 'trial') -->
                     <h1 id="trial">Ви під'єднались в гостьовому режимі!</h1>
-                $(elif login-by != 'mac')
-                    <h1>Ви під'єднались як <span>$(username)!</span></h1>
-                $(endif)
+                <!-- $(elif login-by != 'mac') -->
+                    <!-- <h1>Ви під'єднались як <span>$(username)!</span></h1> -->
+                <!-- $(endif) -->
 
                 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
                     
                     <div class="outside-link-parent"><a class="outside-link" id="uni-link" href="http://lnup.edu.ua">Офіційний вебсайт Львівського національного університету природокористування</a></div>
                     <div class="outside-link-parent" style="margin-bottom: 20px;"><a class="outside-link" href="https://forms.office.com/r/L27gc6pDJZ">Технічна підтримка</a></div>
-                    $(if login-by-mac != 'yes')
+                    <!-- $(if login-by-mac != 'yes') -->
                     <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
                     <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
                     <!-- end of user manager link -->
@@ -60,7 +60,7 @@ $(endif)
                         <input id="connect-button" type="submit" value="Вихід з мережі">
                         <div id="connect-background"></div>
                     </div>
-                    $(endif)
+                    <!-- $(endif) -->
                 </form>
             </div>
         </div>

@@ -100,9 +100,10 @@ function changeLanguage(sender, isUKR, startup) {
         console.log(textArray);
 
     if (!startup) {
+        // Fade out
         Array.prototype.forEach.call(textArray, function(element) {
             if (element.id != "input-login" && element.id !== "input-password") {
-                element.style.transition = 'opacity 0.2s ease-in-out';
+                element.style.transition = 'opacity 0.2s ease-out';
                 element.style.opacity = '0';
             }
             else if (!isFirefox) {
@@ -111,6 +112,7 @@ function changeLanguage(sender, isUKR, startup) {
             }
         }); 
 
+        // Change text, fade in in 0.2 second
         setTimeout(function() {
             replaceText(sender, isUKR);
             Array.prototype.forEach.call(textArray, function(element) {
@@ -123,6 +125,13 @@ function changeLanguage(sender, isUKR, startup) {
                 }
             });
         }, 200);
+
+        // Restore transitions at the end
+        Array.prototype.forEach.call(textArray, function(element) {
+            if (element.id != "input-login" && element.id !== "input-password") {
+                element.style.transition = '0.4s ease-out';
+            }
+        });
     }
     else {
         replaceText(sender, isUKR);
