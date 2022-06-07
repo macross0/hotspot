@@ -14,7 +14,12 @@
         <div class="main">
             <div fill-background class="wrap">
                 <h1>Помилка точки доступу: $(error)</h1>
-                <p class="info">Сторінка входу: <a href="$(link-login)">$(link-login)</a></p>
+                <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                    <div id="connect">
+                        <input id="connect-button" type="submit" value="Сторінка входу"/>
+                        <div id="connect-background"></div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

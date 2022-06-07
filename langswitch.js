@@ -176,7 +176,7 @@ function changeLanguage(sender, isUKR, startup) {
                 if (textArray[0].id == "trial")
                     textArray[0].textContent = "Ви під'єднались в гостьовому режимі!";
                 else
-                    textArray[0].textContent = "Ви під'єднались як ";
+                    textArray[0].textContent = "Ви під'єднались як $(username)!";
                 textArray[1].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
                 textArray[1].style.lineHeight = "20px";
 
@@ -188,7 +188,7 @@ function changeLanguage(sender, isUKR, startup) {
                 if (textArray[0].id == "trial")
                     textArray[0].textContent = "You connected as guest!";
                 else
-                    textArray[0].textContent = "You connected as ";
+                    textArray[0].textContent = "You connected as $(username)!";
                 textArray[1].textContent = "Official Lviv National Enviromental University website";
                 textArray[1].style.lineHeight = "30px";
 

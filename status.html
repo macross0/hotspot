@@ -45,10 +45,10 @@ $(endif)
                 $(if login-by == 'trial')
                     <h1 id="trial">Ви під'єднались в гостьовому режимі!</h1>
                 $(elif login-by != 'mac')
-                    <h1>Ви під'єднались як <span>$(username)!</span></h1>
+                    <h1>Ви під'єднались як $(username)!</h1>
                 $(endif)
 
-                <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                <form action="$(link-logout)?erase-cookie=true" name="logout" onSubmit="return openLogout()">
                     
                     <div class="outside-link-parent"><a class="outside-link" id="uni-link" href="http://lnup.edu.ua">Офіційний вебсайт Львівського національного університету природокористування</a></div>
                     <div class="outside-link-parent" style="margin-bottom: 20px;"><a class="outside-link" href="https://forms.office.com/r/L27gc6pDJZ">Технічна підтримка</a></div>

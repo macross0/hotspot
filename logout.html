@@ -20,10 +20,13 @@
     <div class="ie-fixMinHeight">
         <div class="main">
             <div fill-background class="wrap">
-                <h1>Ви тільки-що від'єдналися!</h1> 
+                <h1>Від'єднано від мережі!</h1> 
 
                 <form action="$(link-login)" name="login" onSubmit="return openLogin()">
-                <input type="submit" value="Під'єднатися">
+                <div id="connect">
+                    <input id="connect-button" type="submit" value="Вхід">
+                    <div id="connect-background"></div>
+                </div>
                 </form>
             </div>
         </div>
