@@ -424,6 +424,11 @@ input[type=text]:focus {
 	width: fit-content;	
 }
 
+#error-text {
+	color: red;
+	margin-bottom: 10px;
+}
+
 #connect-hint, #footer-text {
 	color: white;
 	text-align: center;

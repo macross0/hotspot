@@ -51,7 +51,7 @@
                     <p class="info $(if error)alert$(endif)"></p>
                         $(if error == "")<p id="connect-hint">Для входу в мережу використовуйте свій логін та цифровий пароль</p>$(endif)<br>
 
-                        $(if error)$(error)$(endif)
+                        $(if error)<p id="error-text">$(error)</p>$(endif)
                     
                     <label>
                         <img class="ico" src="img/userGreen.svg" alt="#" />
