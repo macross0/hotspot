@@ -138,7 +138,7 @@ function changeLanguage(sender, isUKR, startup) {
             else if (sender == "status") {
                 Array.prototype.forEach.call(textArray, function(element) {
                     if (element.className == "outside-link") {
-                        element.style.transition = 'box-shadow 0.25s ease-in-out';
+                        element.style.transition = '0.25s ease-in-out';
                     }
                     else {
                         element.style.transition = '0.4s ease-in-out';
@@ -178,19 +178,17 @@ function changeLanguage(sender, isUKR, startup) {
                 else
                     textArray[0].textContent = "Ви під'єднались як ";
                 textArray[1].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
-                textArray[1].style.lineHeight = "20px";
 
-                textArray[2].textContent = "Технічна підтримка";
+                textArray[2].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
                 textArray[3].setAttribute("value", "Вихід з мережі");
                 textArray[4].textContent = "Відділ КІТ ЛНУП";
             }
-            else {  
+            else {
                 if (textArray[0].id == "trial")
                     textArray[0].textContent = "You connected as guest!";
                 else
                     textArray[0].textContent = "You connected as ";
                 textArray[1].textContent = "Official Lviv National Enviromental University website";
-                textArray[1].style.lineHeight = "30px";
 
                 textArray[2].textContent = "Technical support";
                 textArray[3].setAttribute("value", "Disconnect");

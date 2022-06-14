@@ -380,28 +380,39 @@ input[type=text]:focus {
     user-select: none;
 }
 
-.outside-link-parent {
+.outside-link {
 	border: 2px white dotted;
 	border-radius: 6px;
 	margin-bottom: 10px;
-}
-
-.outside-link {
 	position: relative;
 	color: white;
 	text-decoration: none;
 	padding: 10px;
 	text-align: center;
 	display: block;
-	border-radius: 3px;
+	transition: 0.25s ease-in-out;
+	text-align: center;
 }
 
 .outside-link#uni-link {
-	height: 80px !important;
+	display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	justify-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	height: 87px !important;
 }
 
 .outside-link:hover {
-	transition: box-shadow 0.25s ease-in-out;
+	border-color: transparent;
 	box-shadow: 0 0 0 2px;
 }
 
