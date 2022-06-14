@@ -179,7 +179,7 @@ function changeLanguage(sender, isUKR, startup) {
                     textArray[0].textContent = "Ви під'єднались як ";
                 textArray[1].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
 
-                textArray[2].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
+                textArray[2].textContent = "Технічна підтримка";
                 textArray[3].setAttribute("value", "Вихід з мережі");
                 textArray[4].textContent = "Відділ КІТ ЛНУП";
             }
