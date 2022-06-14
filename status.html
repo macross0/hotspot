@@ -67,7 +67,7 @@ function openLogout() {
                 $(if login-by == 'trial')
                     <h1 id="trial">Ви під'єднались в гостьовому режимі!</h1>
                 $(elif login-by != 'mac')
-                    <h1>Ви під'єднались як $(username)!</h1>
+                    <h1><span>Ви під'єднались як </span>$(username)!</h1>
                 $(endif)
 
                 <form action="$(link-logout)?erase-cookie=true" name="logout" onSubmit="return openLogout()">
