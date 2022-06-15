@@ -22,26 +22,7 @@ $(if advert-pending == 'yes')
     }
 $(endif)
 
-function clearCookies() {
-    var cookies = document.cookie.split("; ");
-    for (var c = 0; c < cookies.length; c++) {
-        var d = window.location.hostname.split(".");
-        while (d.length > 0) {
-            var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
-            var p = location.pathname.split('/');
-            document.cookie = cookieBase + '/';
-            while (p.length > 0) {
-                document.cookie = cookieBase + p.join('/');
-                p.pop();
-            };
-            d.shift();
-        }
-    }
-}
-
 function openLogout() {
-    clearCookies();
-
     if (window.name != 'hotspot_status') return true;
 
     open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
@@ -70,7 +51,7 @@ function openLogout() {
                     <h1><span>Ви під'єднались як </span>$(username)!</h1>
                 $(endif)
 
-                <form action="$(link-logout)?erase-cookie=true" name="logout" onSubmit="return openLogout()">
+                <form action="$(link-logout)?erase-cookie=on" name="logout" onSubmit="return openLogout()">
                     
                     <a class="outside-link" id="uni-link" href="http://lnup.edu.ua">Офіційний вебсайт Львівського національного університету природокористування</a>
                     <a class="outside-link" style="margin-bottom: 20px;" href="https://forms.office.com/r/L27gc6pDJZ">Технічна підтримка</a>

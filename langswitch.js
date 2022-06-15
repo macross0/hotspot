@@ -94,7 +94,7 @@ function changeLanguage(sender, isUKR, startup) {
     if (sender == "login")
         var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
     else if (sender == "status")
-        var textArray = document.querySelectorAll("h1, .outside-link, #connect-button, #footer-link");
+        var textArray = document.querySelectorAll("h1 > span, .outside-link, #connect-button, #footer-link");
 
         // remove this later before release
         console.log(textArray);
