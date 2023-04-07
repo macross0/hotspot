@@ -178,10 +178,10 @@ function changeLanguage(sender, isUKR, startup) {
                 else
                     textArray[0].textContent = "Ви під'єднались як ";
                 textArray[1].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
-
-                textArray[2].textContent = "Технічна підтримка";
-                textArray[3].setAttribute("value", "Вихід з мережі");
-                textArray[4].textContent = "Відділ КІТ ЛНУП";
+                textArray[2].textContent = "Віртуальне навчальне середовище Moodle";
+                textArray[3].textContent = "Технічна підтримка";
+                textArray[4].setAttribute("value", "Вихід з мережі");
+                textArray[5].textContent = "Відділ КІТ ЛНУП";
             }
             else {
                 if (textArray[0].id == "trial")
@@ -189,10 +189,10 @@ function changeLanguage(sender, isUKR, startup) {
                 else
                     textArray[0].textContent = "You connected as ";
                 textArray[1].textContent = "Official Lviv National Enviromental University website";
-
-                textArray[2].textContent = "Technical support";
-                textArray[3].setAttribute("value", "Disconnect");
-                textArray[4].textContent = "CIT Department of LNEU";
+                textArray[2].textContent = "Virtual studying environment Moodle";
+                textArray[3].textContent = "Technical support";
+                textArray[4].setAttribute("value", "Disconnect");
+                textArray[5].textContent = "CIT Department of LNEU";
             }
         }
     }
