@@ -153,12 +153,17 @@ select:-webkit-autofill:focus {
 	fill: #fff
 }
 
-h1, h1 > span {
+h1 {
 	text-align: center;
 	color: #fff;
 	font-size: 24px !important;
 	line-height: 32px;
     height: 64px;
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 * {

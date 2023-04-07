@@ -94,7 +94,7 @@ function changeLanguage(sender, isUKR, startup) {
     if (sender == "login")
         var textArray = document.querySelectorAll("#connect-hint, #input-login, #input-password, #connect-button, #guest-connect, #footer-text");
     else if (sender == "status")
-        var textArray = document.querySelectorAll("h1 > span, .outside-link, #connect-button, #footer-link");
+        var textArray = document.querySelectorAll("h1#corp-email, h1#username, .outside-link, #connect-button, #footer-link");
 
         // remove this later before release
         console.log(textArray);
@@ -177,22 +177,22 @@ function changeLanguage(sender, isUKR, startup) {
                     textArray[0].textContent = "Ви під'єднались в гостьовому режимі!";
                 else
                     textArray[0].textContent = "Ви під'єднались як ";
-                textArray[1].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
-                textArray[2].textContent = "Віртуальне навчальне середовище Moodle";
-                textArray[3].textContent = "Технічна підтримка";
-                textArray[4].setAttribute("value", "Вихід з мережі");
-                textArray[5].textContent = "Відділ КІТ ЛНУП";
+                textArray[2].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
+                textArray[3].textContent = "Віртуальне навчальне середовище Moodle";
+                textArray[4].textContent = "Технічна підтримка";
+                textArray[5].setAttribute("value", "Вихід з мережі");
+                textArray[6].textContent = "Відділ КІТ ЛНУП";
             }
             else {
                 if (textArray[0].id == "trial")
                     textArray[0].textContent = "You connected as guest!";
                 else
                     textArray[0].textContent = "You connected as ";
-                textArray[1].textContent = "Official Lviv National Enviromental University website";
-                textArray[2].textContent = "Virtual studying environment Moodle";
-                textArray[3].textContent = "Technical support";
-                textArray[4].setAttribute("value", "Disconnect");
-                textArray[5].textContent = "CIT Department of LNEU";
+                textArray[2].textContent = "Official Lviv National Enviromental University website";
+                textArray[3].textContent = "Virtual studying environment Moodle";
+                textArray[4].textContent = "Technical support";
+                textArray[5].setAttribute("value", "Disconnect");
+                textArray[6].textContent = "CIT Department of LNEU";
             }
         }
     }
