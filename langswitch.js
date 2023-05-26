@@ -179,7 +179,7 @@ function changeLanguage(sender, isUKR, startup) {
                     textArray[0].textContent = "Ви під'єднались як ";
                 textArray[2].textContent = "Офіційний вебсайт Львівського національного університету природокористування";
                 textArray[3].textContent = "Віртуальне навчальне середовище Moodle";
-                textArray[4].textContent = "Технічна підтримка";
+                textArray[4].textContent = "Telegram-бот технічної підтримки";
                 textArray[5].setAttribute("value", "Вихід з мережі");
                 textArray[6].textContent = "Відділ КІТ ЛНУП";
             }
@@ -189,8 +189,8 @@ function changeLanguage(sender, isUKR, startup) {
                 else
                     textArray[0].textContent = "You connected as ";
                 textArray[2].textContent = "Official Lviv National Enviromental University website";
-                textArray[3].textContent = "Virtual studying environment Moodle";
-                textArray[4].textContent = "Technical support";
+                textArray[3].textContent = "Moodle virtual studying environment";
+                textArray[4].textContent = "A Telegram bot for technical support";
                 textArray[5].setAttribute("value", "Disconnect");
                 textArray[6].textContent = "CIT Department of LNEU";
             }
